@@ -1,6 +1,8 @@
 ipykernel
 matplotlib
 pandas
+plotly
 plotly[express]
 scikit-learn
 seaborn
+nbformat
