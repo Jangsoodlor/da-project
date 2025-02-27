@@ -1,6 +1,6 @@
-# 
 ipykernel
-pandas
 matplotlib
-seaborn
+pandas
+plotly[express]
 scikit-learn
+seaborn
