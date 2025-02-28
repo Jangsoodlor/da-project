@@ -1,0 +1,18 @@
+te = TargetEncoder()
+df = dataset.copy()
+y = df["Price per Unit"]
+ct = ColumnTransformer(transformers=[("", te, ["Brand",
+                                                "Product Name"])],
+                        verbose_feature_names_out=False,
+                        remainder="passthrough")
+x = df[["Brand",
+        "Product Name",
+        "Quantity Sold (liters/kg)",
+        "Quantity in Stock (liters/kg)",
+        "Approx. Total Revenue(INR)"
+      ]]
+
+t_data = ct.fit_transform(x, y)
+t_data_columns = ct.get_feature_names_out()
+t_df = pd.DataFrame(t_data, columns=t_data_columns)
+t_df.head()
